@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# SessionStart hook for cflow plugin
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+# Read cf:start content
+start_content=$(cat "${PLUGIN_ROOT}/skills/start/SKILL.md" 2>&1 || echo "Error reading cf:start skill")
+
+escape_for_json() {
+    local s="$1"
+    s="${s//\\/\\\\}"
+    s="${s//\"/\\\"}"
+    s="${s//$'\n'/\\n}"
+    s="${s//$'\r'/\\r}"
+    s="${s//$'\t'/\\t}"
+    printf '%s' "$s"
+}
+
+start_escaped=$(escape_for_json "$start_content")
+session_context="<EXTREMELY_IMPORTANT>\nYou have cflow skills.\n\n**Below is the full content of your 'cf:start' skill - your introduction to using cflow skills. For all other skills, use the 'Skill' tool:**\n\n${start_escaped}\n</EXTREMELY_IMPORTANT>"
+
+if [ -n "${CLAUDE_PLUGIN_ROOT:-}" ]; then
+  cat <<EOF
+{
+  "hookSpecificOutput": {
+    "hookEventName": "SessionStart",
+    "additionalContext": "${session_context}"
+  }
+}
+EOF
+else
+  cat <<EOF
+{
+  "additional_context": "${session_context}"
+}
+EOF
+fi
+
+exit 0
