@@ -4,26 +4,42 @@ Agentic workflow skills for Claude Code, fork from [Superpowers](https://github.
 
 ## Installation
 
-### Claude Code (via Plugin Marketplace)
-
-Register the marketplace:
+### Quick Install (Recommended)
 
 ```bash
-/plugin marketplace add vanhiep99w/cflow
+# Install the CLI
+curl -fsSL https://raw.githubusercontent.com/vanhiep99w/cflow/main/cli/install.sh | bash
+
+# Then in your project:
+cd your-project
+cflow init
 ```
 
-Install the plugin:
-
-```bash
-/plugin install cf@cflow-dev
-```
-
-### Claude Code (Manual)
+### Manual Install
 
 ```bash
 git clone https://github.com/vanhiep99w/cflow.git
 cd your-project
-claude plugin add /path/to/cflow
+/path/to/cflow/cli/cflow init
+```
+
+### CLI Commands
+
+```bash
+cflow init        # Install skills into current project
+cflow update      # Update to latest version
+cflow list        # List installed skills
+cflow status      # Show version info
+cflow remove      # Uninstall all skills
+```
+
+### Plugin Install (Alternative)
+
+If you prefer Claude Code's plugin system:
+
+```bash
+/plugin marketplace add vanhiep99w/cflow
+/plugin install cf@cflow-dev
 ```
 
 ### Requirements
@@ -47,11 +63,13 @@ claude plugin add /path/to/cflow
 
 ### Verify Installation
 
-Start a new Claude Code session. Cflow will automatically check Beads, display task state, and suggest next action.
+Start a new Claude Code session. Run `/cf:start` to initialize Beads and discover available skills.
 
 ### Updating
 
 ```bash
+cflow update
+# or if using plugin:
 /plugin update cf
 ```
 
