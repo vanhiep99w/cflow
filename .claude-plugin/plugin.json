@@ -1,10 +1,23 @@
 {
   "name": "cflow",
-  "description": "Personal workflow skills: Beads task tracking, Pencil MCP design, TDD, debugging, and collaboration patterns",
+  "description": "Agentic workflow skills with Beads git-backed task tracking, Pencil MCP design, TDD, debugging, and multi-agent coordination",
   "version": "0.1.0",
   "author": {
-    "name": "Hiep Tran"
+    "name": "Hiep Tran",
+    "email": "vanhiep99w@gmail.com"
   },
+  "homepage": "https://github.com/hieptran/cflow",
+  "repository": "https://github.com/hieptran/cflow",
   "license": "MIT",
-  "keywords": ["skills", "beads", "pencil", "tdd", "debugging", "workflows", "cflow"]
+  "keywords": [
+    "skills",
+    "beads",
+    "pencil",
+    "tdd",
+    "debugging",
+    "workflows",
+    "cflow",
+    "task-tracking",
+    "multi-agent"
+  ]
 }
