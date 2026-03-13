@@ -15,7 +15,7 @@ Register the marketplace:
 Install the plugin:
 
 ```bash
-/plugin install cflow@cflow-dev
+/plugin install cf@cflow-dev
 ```
 
 ### Claude Code (Manual)
@@ -52,7 +52,7 @@ Start a new Claude Code session. Cflow will automatically check Beads, display t
 ### Updating
 
 ```bash
-/plugin update cflow
+/plugin update cf
 ```
 
 ## Usage

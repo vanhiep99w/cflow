@@ -7,7 +7,7 @@
   },
   "plugins": [
     {
-      "name": "cflow",
+      "name": "cf",
       "description": "Agentic workflow skills with Beads git-backed task tracking, Pencil MCP design, TDD, debugging, and multi-agent coordination",
       "version": "0.1.0",
       "source": "./",
