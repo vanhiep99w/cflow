@@ -9,7 +9,7 @@ Agentic workflow skills for Claude Code, fork from [Superpowers](https://github.
 Register the marketplace:
 
 ```bash
-/plugin marketplace add hieptran/cflow
+/plugin marketplace add vanhiep99w/cflow
 ```
 
 Install the plugin:
@@ -21,7 +21,7 @@ Install the plugin:
 ### Claude Code (Manual)
 
 ```bash
-git clone https://github.com/hieptran/cflow.git
+git clone https://github.com/vanhiep99w/cflow.git
 cd your-project
 claude plugin add /path/to/cflow
 ```
